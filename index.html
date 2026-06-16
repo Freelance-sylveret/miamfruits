@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Miam Fruits - Fraîcheur & Énergie</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+<script>
+
+const menuToggle =
+document.getElementById("menuToggle");
+
+const navMenu =
+document.getElementById("navMenu");
+
+menuToggle.addEventListener("click",()=>{
+
+navMenu.classList.toggle("active");
+
+});
+
+</script>
+<body>
+
+<header>
+
+    <div class="logo-container">
+
+        <img
+        src="image/img2.jpg"
+        alt="Miam Fruits"
+        class="logo">
+
+        <div class="brand">
+
+            <span>By Nexa Event</span>
+
+        </div>
+
+    </div>
+
+    <nav>
+
+        <a href="#accueil">Accueil</a>
+
+        <a href="#produits">Produits</a>
+
+        <a href="#services">Événements</a>
+
+        <a href="#contact">Contact</a>
+
+    </nav>
+     <div class="menu-toggle" id="menuToggle">
+        ☰
+    </div>
+
+</header>
+
+<section class="hero" id="accueil">
+
+    <div class="overlay"></div>
+
+    <div class="hero-content">
+
+        <h1>Fraîcheur & Énergie</h1>
+
+        <p>
+            Des boissons saines et naturelles
+            pour tous les goûts.
+        </p>
+
+        <a href="#produits" class="btn">
+            Découvrir nos produits
+        </a>
+
+    </div>
+
+</section>
+
+<section class="products" id="produits">
+
+    <h2>Nos Produits</h2>
+
+    <div class="product-grid">
+
+        <div class="card">
+            <img src="image/img6.jpeg" alt="">
+            <h3>Lait Simple</h3>
+            <p>Onctueux et nourrissant</p>
+            <span>700 FCFA</span>
+        </div>
+
+        <div class="card">
+            <img src="image/img5.jpeg" alt="">
+            <h3>Lait & Fruits</h3>
+            <p>Un mélange gourmand</p>
+            <span>1300 FCFA</span>
+        </div>
+
+        <div class="card">
+            <img src="image/img4.jpeg" alt="">
+            <h3>Fruits Simples</h3>
+            <p>100% fruits frais</p>
+            <span>1000 FCFA</span>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="advantages" id="services">
+
+    <h2>Pourquoi Nous Choisir ?</h2>
+
+    <div class="advantages-grid">
+
+        <div>
+            <i class="fa-solid fa-leaf"></i>
+            <h3>Naturel</h3>
+        </div>
+
+        <div>
+            <i class="fa-solid fa-truck"></i>
+            <h3>Livraison Rapide</h3>
+        </div>
+
+        <div>
+            <i class="fa-solid fa-heart"></i>
+            <h3>Sain</h3>
+        </div>
+
+        <div>
+            <i class="fa-solid fa-star"></i>
+            <h3>Qualité Premium</h3>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="contact" id="contact">
+
+    <h2>Contactez-nous</h2>
+
+    <form>
+
+        <input type="text" placeholder="Nom">
+
+        <input type="email" placeholder="Email">
+
+        <textarea placeholder="Votre message"></textarea>
+
+        <button type="submit">
+            Envoyer
+        </button>
+
+    </form>
+
+</section>
+
+<a class="whatsapp"
+href="https://wa.me/2250777228118"
+target="_blank">
+
+<i class="fab fa-whatsapp"></i>
+
+</a>
+
+<footer>
+
+    <div class="footer-container">
+
+        <div class="footer-about">
+
+            <img
+            src="image/img1.jpg"
+            class="footer-logo">
+
+            <p>
+
+                Des boissons naturelles,
+                fraîches et énergétiques
+                livrées à Abidjan.
+
+            </p>
+
+
+        </div>
+
+        <div class="footer-links">
+
+            <h3>Navigation</h3>
+
+            <a href="#accueil">Accueil</a>
+            <a href="#produits">Produits</a>
+            <a href="#services">Événements</a>
+            <a href="#galerie">Galerie</a>
+            <a href="#contact">Contact</a>
+
+        </div>
+
+        <div class="footer-products">
+
+            <h3>Produits</h3>
+
+            <a href="#">Lait Simple</a>
+            <a href="#">Lait & Fruits</a>
+            <a href="#">Fruits Simples</a>
+
+        </div>
+
+        <div class="footer-contact">
+
+            <h3>Contact</h3>
+
+            <p>📞 0777228118</p>
+
+            <p>📧 info@nexaevent.com</p>
+
+            <p>📍 Abidjan & environs</p>
+
+            <div class="socials">
+
+                <a href="#">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+
+                <a href="#">
+                    <i class="fab fa-instagram"></i>
+                </a>
+
+                <a href="#">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+
+                <a href="#">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="copyright">
+
+        © 2026 Miam Fruits • By Nexa Event
+
+    </div>
+
+</footer>
+
+</body>
+</html>
