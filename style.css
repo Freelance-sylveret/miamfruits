@@ -60,6 +60,10 @@ nav a{
     font-weight:600;
 }
 
+nav a.active-link{
+    color:#4CAF50;
+}
+
 .menu-toggle{
     display:none;
     font-size:30px;
@@ -285,10 +289,15 @@ gap:15px;
 }
 
 input,
+select,
 textarea{
 padding:15px;
 border:1px solid #ddd;
 border-radius:10px;
+}
+
+select{
+background:white;
 }
 
 textarea{
@@ -598,4 +607,262 @@ footer{
    }
 
 }
+}
+
+/* MIAM EXTRA PAGES */
+.page-hero{
+    min-height:70vh;
+    padding:120px 8% 80px;
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    background:center/cover;
+}
+
+.avis-hero{
+    background-image:url('image/img8.jpeg');
+}
+
+.vote-hero{
+    background-image:url('image/img6.jpeg');
+}
+
+.page-hero-content{
+    position:relative;
+    z-index:1;
+    max-width:780px;
+    color:white;
+}
+
+.page-hero-content h1{
+    font-size:clamp(2.4rem, 5vw, 4.8rem);
+    margin:18px 0;
+}
+
+.page-hero-content p{
+    font-size:clamp(1rem, 2vw, 1.25rem);
+    line-height:1.7;
+}
+
+.review-panel,
+.vote-section{
+    padding:100px 8%;
+}
+
+.review-intro,
+.vote-heading{
+    max-width:760px;
+    margin:0 auto 50px;
+    text-align:center;
+}
+
+.review-intro h2,
+.feedback-card h2,
+.vote-heading h2,
+.results-panel h2{
+    color:#4CAF50;
+    font-size:clamp(2rem, 4vw, 3rem);
+    margin:15px 0;
+}
+
+.review-intro p,
+.vote-heading p,
+.feedback-card p{
+    color:#555;
+    line-height:1.8;
+}
+
+.review-grid,
+.vote-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+
+.review-card,
+.feedback-card,
+.results-panel,
+.vote-card{
+    background:white;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.review-card{
+    padding:30px;
+    position:relative;
+}
+
+.review-card p{
+    margin:18px 0;
+    color:#555;
+    line-height:1.8;
+}
+
+.review-card h3{
+    color:#4CAF50;
+    margin-bottom:6px;
+}
+
+.review-card span{
+    color:#777;
+    font-size:14px;
+}
+
+.review-stars{
+    color:#F7931E;
+    font-size:20px;
+}
+
+.feedback-section{
+    padding:0 8% 100px;
+    display:grid;
+    grid-template-columns:minmax(0,2fr) minmax(260px,1fr);
+    gap:30px;
+    align-items:stretch;
+}
+
+.feedback-card{
+    padding:40px;
+}
+
+.feedback-form{
+    max-width:none;
+    margin-top:25px;
+}
+
+.form-note{
+    min-height:24px;
+    color:#4CAF50;
+    font-weight:600;
+}
+
+.rating-summary{
+    background:#4CAF50;
+    color:white;
+    border-radius:20px;
+    padding:40px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    text-align:center;
+}
+
+.rating-summary strong{
+    font-size:80px;
+    line-height:1;
+}
+
+.rating-summary span{
+    font-size:30px;
+}
+
+.rating-summary p{
+    margin-top:20px;
+    font-size:18px;
+}
+
+.vote-card{
+    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+}
+
+.vote-card img{
+    width:100%;
+    aspect-ratio:4/3;
+    object-fit:cover;
+}
+
+.vote-card div{
+    padding:25px;
+}
+
+.vote-card h3{
+    color:#4CAF50;
+    margin-bottom:10px;
+}
+
+.vote-card p{
+    color:#555;
+    line-height:1.7;
+    margin-bottom:20px;
+}
+
+.vote-btn{
+    width:100%;
+}
+
+.results-panel{
+    margin-top:40px;
+    padding:40px;
+}
+
+.result-row{
+    display:grid;
+    grid-template-columns:150px 1fr 90px;
+    gap:15px;
+    align-items:center;
+    margin:20px 0;
+}
+
+.result-row span{
+    font-weight:700;
+    color:#333;
+}
+
+.result-row em{
+    color:#777;
+    font-style:normal;
+    text-align:right;
+}
+
+.result-bar{
+    height:14px;
+    background:#f1f1f1;
+    border-radius:30px;
+    overflow:hidden;
+}
+
+.result-bar strong{
+    display:block;
+    width:0;
+    height:100%;
+    background:#F7931E;
+    border-radius:30px;
+    transition:width .3s;
+}
+
+@media screen and (max-width:768px){
+    .page-hero{
+        min-height:62vh;
+        padding:110px 20px 60px;
+    }
+
+    .review-panel,
+    .vote-section{
+        padding:70px 20px;
+    }
+
+    .feedback-section{
+        grid-template-columns:1fr;
+        padding:0 20px 70px;
+    }
+
+    .feedback-card,
+    .results-panel,
+    .rating-summary{
+        padding:28px;
+    }
+
+    .result-row{
+        grid-template-columns:1fr;
+        gap:8px;
+    }
+
+    .result-row em{
+        text-align:left;
+    }
 }

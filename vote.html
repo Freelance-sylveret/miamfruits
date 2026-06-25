@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vote produit - Miam Fruits</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+<header>
+    <div class="logo-container">
+        <img src="image/img2.jpg" alt="Miam Fruits" class="logo">
+        <div class="brand"><span>By Nexa Event</span></div>
+    </div>
+    <nav id="navMenu">
+        <a href="index.html#accueil">Accueil</a>
+        <a href="index.html#produits">Produits</a>
+        <a href="index.html#services">Evenements</a>
+        <a href="avis.html">Avis</a>
+        <a href="vote.html" class="active-link">Vote</a>
+        <a href="index.html#contact">Contact</a>
+    </nav>
+    <div class="menu-toggle" id="menuToggle">&#9776;</div>
+</header>
+
+<main>
+    <section class="page-hero vote-hero">
+        <div class="overlay"></div>
+        <div class="page-hero-content">
+            <span class="section-tag">VOTE PRODUIT</span>
+            <h1>Choisissez votre favori</h1>
+            <p>Votez pour le produit Miam Fruits que vous aimeriez retrouver en vedette cette semaine.</p>
+        </div>
+    </section>
+
+    <section class="vote-section">
+        <div class="vote-heading">
+            <span class="section-tag">SONDAGE</span>
+            <h2>Quel produit merite la premiere place ?</h2>
+            <p>Les votes restent sur votre navigateur et permettent de visualiser les preferences des visiteurs de cette page.</p>
+        </div>
+
+        <div class="vote-grid" id="voteGrid">
+            <article class="vote-card" data-product="Lait Simple">
+                <img src="image/img.jpeg" alt="Lait Simple">
+                <div>
+                    <h3>Lait Simple</h3>
+                    <p>Onctueux, frais et nourrissant.</p>
+                    <button type="button" class="vote-btn">Voter</button>
+                </div>
+            </article>
+            <article class="vote-card" data-product="Lait & Fruits">
+                <img src="image/img5.jpeg" alt="Lait et fruits">
+                <div>
+                    <h3>Lait & Fruits</h3>
+                    <p>Le melange gourmand qui plait a tous.</p>
+                    <button type="button" class="vote-btn">Voter</button>
+                </div>
+            </article>
+            <article class="vote-card" data-product="Fruits Simples">
+                <img src="image/img4.jpeg" alt="Fruits Simples">
+                <div>
+                    <h3>Fruits Simples</h3>
+                    <p>Une pause 100% fruits frais.</p>
+                    <button type="button" class="vote-btn">Voter</button>
+                </div>
+            </article>
+        </div>
+        <p class="form-note" id="voteNote"></p>
+    </section>
+</main>
+
+<a class="whatsapp" href="https://wa.me/2250777228118" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+<footer>
+    <div class="footer-container">
+        <div class="footer-about">
+            <img src="image/img1.jpg" class="footer-logo" alt="Miam Fruits">
+            <p>Des boissons naturelles, fraiches et energetiques livrees a Abidjan.</p>
+        </div>
+        <div class="footer-links">
+            <h3>Navigation</h3>
+            <a href="index.html#accueil">Accueil</a>
+            <a href="index.html#produits">Produits</a>
+            <a href="index.html#services">Evenements</a>
+            <a href="avis.html">Avis</a>
+            <a href="vote.html">Vote</a>
+            <a href="index.html#contact">Contact</a>
+        </div>
+        <div class="footer-products">
+            <h3>Produits</h3>
+            <a href="#">Lait Simple</a>
+            <a href="#">Lait & Fruits</a>
+            <a href="#">Fruits Simples</a>
+        </div>
+        <div class="footer-contact">
+            <h3>Contact</h3>
+            <p>Tel: 0777228118</p>
+            <p>Email: info@nexaevent.com</p>
+            <p>Abidjan & environs</p>
+            <div class="socials">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-tiktok"></i></a>
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">&copy; 2026 Miam Fruits - By Nexa Event</div>
+</footer>
+
+<script>
+const menuToggle = document.getElementById("menuToggle");
+const navMenu = document.getElementById("navMenu");
+const voteGrid = document.getElementById("voteGrid");
+const voteNote = document.getElementById("voteNote");
+const storageKey = "miamFruitVotes";
+const defaultVotes = {
+    "Lait Simple": 12,
+    "Lait & Fruits": 18,
+    "Fruits Simples": 9
+};
+
+menuToggle.addEventListener("click", () => {
+    navMenu.classList.toggle("active");
+});
+
+function getVotes() {
+    const savedVotes = localStorage.getItem(storageKey);
+    return savedVotes ? JSON.parse(savedVotes) : { ...defaultVotes };
+}
+
+function formatVote(value) {
+    return value > 1 ? `${value} votes` : `${value} vote`;
+}
+
+function renderVotes() {
+    const votes = getVotes();
+    const total = Object.values(votes).reduce((sum, value) => sum + value, 0) || 1;
+    const mapping = {
+        "Lait Simple": ["bar-simple", "count-simple"],
+        "Lait & Fruits": ["bar-fruits", "count-fruits"],
+        "Fruits Simples": ["bar-simple-fruits", "count-simple-fruits"]
+    };
+
+    Object.entries(mapping).forEach(([product, ids]) => {
+        const percent = Math.round((votes[product] / total) * 100);
+        document.getElementById(ids[0]).style.width = `${percent}%`;
+        document.getElementById(ids[1]).textContent = formatVote(votes[product]);
+    });
+}
+
+voteGrid.addEventListener("click", (event) => {
+    const button = event.target.closest(".vote-btn");
+    if (!button) {
+        return;
+    }
+
+    const card = button.closest(".vote-card");
+    const product = card.dataset.product;
+    const votes = getVotes();
+    votes[product] += 1;
+    localStorage.setItem(storageKey, JSON.stringify(votes));
+    renderVotes();
+    voteNote.textContent = `Merci, votre vote pour ${product} a ete pris en compte.`;
+});
+
+renderVotes();
+</script>
+</body>
+</html>
