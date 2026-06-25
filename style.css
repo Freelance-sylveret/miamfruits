@@ -865,4 +865,76 @@ footer{
     .result-row em{
         text-align:left;
     }
+
+    .feedback-section {
+    display: flex;
+    justify-content: center; /* centre horizontalement */
+    align-items: center;
+    gap: 40px;
+    padding: 60px 20px;
+    flex-wrap: wrap; /* important pour mobile */
+}
+
+/* Carte formulaire */
+.feedback-card {
+    width: 100%;
+    max-width: 600px;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* Bloc note moyenne */
+.rating-summary {
+    width: 220px;
+    text-align: center;
+}
+
+/* CENTRER le titre */
+.feedback-card h2 {
+    text-align: center;
+}
+
+/* Formulaire propre */
+#reviewForm {
+    display: flex;
+    flex-direction: column;
+}
+
+#reviewForm label {
+    margin-top: 12px;
+    font-weight: 600;
+}
+
+#reviewForm select,
+#reviewForm textarea {
+    margin-top: 5px;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+/* Bouton WhatsApp */
+#reviewForm button {
+    margin-top: 20px;
+    padding: 12px;
+    background: #25D366;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#reviewForm button:hover {
+    background: #1ebe5d;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .rating-summary {
+        width: 100%;
+    }
+}
 }

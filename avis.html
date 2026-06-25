@@ -7,7 +7,9 @@
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
+
 <body>
+
 <header>
     <div class="logo-container">
         <img src="image/img2.jpg" alt="Miam Fruits" class="logo">
@@ -25,144 +27,135 @@
 </header>
 
 <main>
-    <section class="page-hero avis-hero">
-        <div class="overlay"></div>
-        <div class="page-hero-content">
-            <span class="section-tag">AVIS CLIENTS</span>
-            <h1>Votre experience compte</h1>
-            <p>Partagez votre avis sur nos boissons, nos yaourts fruites et notre service evenementiel.</p>
-        </div>
-    </section>
 
-    <section class="review-panel">
-        <div class="review-intro">
-            <span class="section-tag">TEMOIGNAGES</span>
-            <h2>Ce que nos clients aiment chez Miam Fruits</h2>
-            <p>Des produits frais, un service rapide et une presentation soignee pour les commandes du quotidien comme pour les evenements.</p>
-        </div>
+<section class="page-hero avis-hero">
+    <div class="overlay"></div>
+    <div class="page-hero-content">
+        <span class="section-tag">VOTRE EXPÉRIENCE</span>
+        <h1>Votre expérience compte</h1>
+        <p>Quelques questions rapides pour nous aider à améliorer Miam Fruit.</p>
+    </div>
+</section>
 
-        <div class="review-grid" id="reviewGrid">
-            <article class="review-card">
-                <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                <p>Les jus sont frais, bien doses et parfaits pour mes pauses au bureau. La livraison est toujours ponctuelle.</p>
-                <h3>Aminata K.</h3>
-                <span>Commande entreprise</span>
-            </article>
-            <article class="review-card">
-                <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                <p>Nous avons commande pour un anniversaire. Les boissons etaient belles, bonnes et tout le monde a adore.</p>
-                <h3>Kevin A.</h3>
-                <span>Evenement prive</span>
-            </article>
-            <article class="review-card">
-                <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
-                <p>Le melange lait et fruits est tres gourmand. Une vraie option fraiche pour changer des boissons classiques.</p>
-                <h3>Sarah D.</h3>
-                <span>Cliente reguliere</span>
-            </article>
-        </div>
-    </section>
+<section class="feedback-section">
 
-    <section class="feedback-section">
-        <div class="feedback-card">
-            <span class="section-tag">DONNER UN AVIS</span>
-            <h2>Laissez votre note</h2>
-            <form id="reviewForm" class="feedback-form">
-                <input type="text" id="reviewName" placeholder="Votre nom" required>
-                <select id="reviewRating" required>
-                    <option value="">Votre note</option>
-                    <option value="5">5 etoiles</option>
-                    <option value="4">4 etoiles</option>
-                    <option value="3">3 etoiles</option>
-                    <option value="2">2 etoiles</option>
-                    <option value="1">1 etoile</option>
-                </select>
-                <textarea id="reviewMessage" placeholder="Votre avis" required></textarea>
-                <button type="submit">Publier mon avis</button>
-                <p class="form-note" id="reviewNote"></p>
-            </form>
-        </div>
+    <div class="feedback-card">
+        <h2>Votre expérience</h2>
 
-        <div class="rating-summary">
-            <div><strong>4.8</strong><span>/5</span></div>
-            <p>Note moyenne des clients satisfaits</p>
-        </div>
-    </section>
+        <form id="reviewForm">
+
+            <!-- Question 1 -->
+            <label>Avez-vous apprécié la dégustation ?</label><br>
+            <input type="radio" name="tasting" value="Oui" required> Oui
+            <input type="radio" name="tasting" value="Non"> Non
+
+            <br><br>
+
+            <!-- Saveur -->
+            <label>Quelle saveur préférez-vous ?</label>
+            <select id="flavor" required>
+                <option value="">Choisir une saveur</option>
+                <option value="Mangue">Mangue</option>
+                <option value="Ananas">Ananas</option>
+                <option value="Fraise">Fraise</option>
+                <option value="Banane">Banane</option>
+                <option value="Mix fruits">Mix fruits</option>
+            </select>
+
+            <br><br>
+
+            <!-- Note -->
+            <label>Comment évaluez-vous le goût ? (1 à 5)</label><br>
+            <select id="rating" required>
+                <option value="">Choisir</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+
+            <br><br>
+
+            <!-- Santé -->
+            <label>Le produit vous semble-t-il sain ?</label><br>
+            <input type="radio" name="healthy" value="Oui" required> Oui
+            <input type="radio" name="healthy" value="Non"> Non
+
+            <br><br>
+
+            <!-- Achat -->
+            <label>Seriez-vous prêt à acheter Miam Fruit ?</label><br>
+            <input type="radio" name="buy" value="Oui" required> Oui
+            <input type="radio" name="buy" value="Non"> Non
+
+            <br><br>
+
+            <!-- Commentaire -->
+            <label>Un commentaire à ajouter ? (optionnel)</label>
+            <textarea id="comment" placeholder="Votre avis en quelques mots..."></textarea>
+
+            <br><br>
+
+            <button type="submit">📲 Envoyer mon avis sur WhatsApp</button>
+
+            <p id="note"></p>
+
+        </form>
+    </div>
+
+</section>
+
 </main>
 
-<a class="whatsapp" href="https://wa.me/2250777228118" target="_blank"><i class="fab fa-whatsapp"></i></a>
+<a class="whatsapp" href="https://wa.me/2250777228118" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+</a>
 
 <footer>
-    <div class="footer-container">
-        <div class="footer-about">
-            <img src="image/img1.jpg" class="footer-logo" alt="Miam Fruits">
-            <p>Des boissons naturelles, fraiches et energetiques livrees a Abidjan.</p>
-        </div>
-        <div class="footer-links">
-            <h3>Navigation</h3>
-            <a href="index.html#accueil">Accueil</a>
-            <a href="index.html#produits">Produits</a>
-            <a href="index.html#services">Evenements</a>
-            <a href="avis.html">Avis</a>
-            <a href="vote.html">Vote</a>
-            <a href="index.html#contact">Contact</a>
-        </div>
-        <div class="footer-products">
-            <h3>Produits</h3>
-            <a href="#">Lait Simple</a>
-            <a href="#">Lait & Fruits</a>
-            <a href="#">Fruits Simples</a>
-        </div>
-        <div class="footer-contact">
-            <h3>Contact</h3>
-            <p>Tel: 0777228118</p>
-            <p>Email: info@nexaevent.com</p>
-            <p>Abidjan & environs</p>
-            <div class="socials">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-tiktok"></i></a>
-                <a href="#"><i class="fab fa-whatsapp"></i></a>
-            </div>
-        </div>
-    </div>
     <div class="copyright">&copy; 2026 Miam Fruits - By Nexa Event</div>
 </footer>
 
 <script>
 const menuToggle = document.getElementById("menuToggle");
 const navMenu = document.getElementById("navMenu");
-const reviewForm = document.getElementById("reviewForm");
-const reviewGrid = document.getElementById("reviewGrid");
-const reviewNote = document.getElementById("reviewNote");
 
 menuToggle.addEventListener("click", () => {
     navMenu.classList.toggle("active");
 });
 
-reviewForm.addEventListener("submit", (event) => {
-    event.preventDefault();
-    const name = document.getElementById("reviewName").value.trim();
-    const rating = Number(document.getElementById("reviewRating").value);
-    const message = document.getElementById("reviewMessage").value.trim();
+// WhatsApp form
+document.getElementById("reviewForm").addEventListener("submit", function(e) {
+    e.preventDefault();
 
-    if (!name || !rating || !message) {
-        return;
-    }
+    const tasting = document.querySelector('input[name="tasting"]:checked')?.value;
+    const flavor = document.getElementById("flavor").value;
+    const rating = document.getElementById("rating").value;
+    const healthy = document.querySelector('input[name="healthy"]:checked')?.value;
+    const buy = document.querySelector('input[name="buy"]:checked')?.value;
+    const comment = document.getElementById("comment").value;
 
-    const card = document.createElement("article");
-    card.className = "review-card";
-    card.innerHTML = `
-        <div class="review-stars">${"&#9733;".repeat(rating)}${"&#9734;".repeat(5 - rating)}</div>
-        <p>${message}</p>
-        <h3>${name}</h3>
-        <span>Nouvel avis</span>
-    `;
+    const message =
+`🍹 *NOUVEL AVIS MIAM FRUITS*
 
-    reviewGrid.prepend(card);
-    reviewForm.reset();
-    reviewNote.textContent = "Merci, votre avis a ete ajoute sur cette page.";
+Aime la dégustation : ${tasting}
+Saveur préférée : ${flavor}
+Note goût : ${rating}/5
+Produit sain : ${healthy}
+Prêt à acheter : ${buy}
+Commentaire : ${comment || "Aucun"}
+
+Merci !`;
+
+    const phone = "2250777228118";
+    const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+
+    window.open(url, "_blank");
+
+    document.getElementById("note").textContent =
+    "Merci ! Votre avis a été envoyé sur WhatsApp.";
 });
 </script>
+
 </body>
 </html>
